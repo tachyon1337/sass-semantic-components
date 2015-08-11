@@ -1,0 +1,86 @@
+@import "variables";
+
+/// create the semantic sass components from the $Semantic Map
+/// @access private
+@mixin _semantic-theme(){
+  ///error
+  @include component($component:error,$map:(
+          background: map-nested-get($Semantic,error,background),
+          font-color: map-nested-get($Semantic,error,font-color),
+          border: map-nested-get($Semantic,error,border),
+          text-shadow: map-nested-get($Semantic,error,text-shadow)
+  ));
+
+  ///info
+  @include component($component:info,$map:(
+          background: map-nested-get($Semantic,info,background),
+          font-color: map-nested-get($Semantic,info,font-color),
+          border: map-nested-get($Semantic,info,border),
+          text-shadow: map-nested-get($Semantic,info,text-shadow)
+  ));
+
+  ///success
+  @include component($component:success,$map:(
+          background: map-nested-get($Semantic,success,background),
+          font-color: map-nested-get($Semantic,success,font-color),
+          border: map-nested-get($Semantic,success,border),
+          text-shadow: map-nested-get($Semantic,success,text-shadow)
+  ));
+
+  ///warning
+  @include component($component:warning,$map:(
+          background: map-nested-get($Semantic,warning,background),
+          font-color: map-nested-get($Semantic,warning,font-color),
+          border: map-nested-get($Semantic,warning,border),
+          text-shadow: map-nested-get($Semantic,warning,text-shadow)
+  ));
+}
+
+/// @access private
+@mixin _semantic-state($state){
+  background:map-nested-get($Semantic,$state,background) !important;
+  color:map-nested-get($Semantic,$state,font-color) !important;
+  border-color:map-nested-get($Semantic,$state,border) !important;
+  &:before{
+    color:map-nested-get($Semantic,$state,font-color) !important;
+  }
+  &:after{
+    color:map-nested-get($Semantic,$state,font-color) !important;
+  }
+  @include component-placeholder(map-nested-get($Semantic,$state,font-color));
+
+
+}
+
+/// @access private
+@mixin _semantic-component($state){
+  *{
+    &.#{$state}{
+      @include _semantic-state($state);
+      &:hover{
+        @include _semantic-state($state);
+      }
+      &:active,&.active{
+        @include _semantic-state($state);
+      }
+    }
+  }
+}
+
+/// instantiates the semantic sass components:error,info,success,warning
+/// applies the semantic state to any html element decorated with .error,.info,.success,.warning classes
+/// @access public
+@mixin semantic-components(){
+  @include _semantic-theme();
+  @include _semantic-component(error);
+  @include _semantic-component(info);
+  @include _semantic-component(warning);
+  @include _semantic-component(success);
+
+}
+
+
+
+
+
+

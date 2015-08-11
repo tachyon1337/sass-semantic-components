@@ -1,0 +1,95 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Sass-semantic-components - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Sass-semantic-components - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Sass Flexbox</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Sass-semantic-components - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="_semantic-theme" data-type="mixin"><a href="#mixin-_semantic-theme">_semantic-theme</a></li><li class="sidebar__item sassdoc__item" data-name="_semantic-state" data-type="mixin"><a href="#mixin-_semantic-state">_semantic-state</a></li><li class="sidebar__item sassdoc__item" data-name="_semantic-component" data-type="mixin"><a href="#mixin-_semantic-component">_semantic-component</a></li><li class="sidebar__item sassdoc__item" data-name="semantic-components" data-type="mixin"><a href="#mixin-semantic-components">semantic-components</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-variable"><a href="#undefined-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="Semantic" data-type="variable"><a href="#variable-Semantic">Semantic</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-_semantic-theme"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_semantic-theme">_semantic-theme</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _semantic-theme() { 
+  ///error
+  @include component($component:error,$map:(
+          background: map-nested-get($Semantic,error,background),
+          font-color: map-nested-get($Semantic,error,font-color),
+          border: map-nested-get($Semantic,error,border),
+          text-shadow: map-nested-get($Semantic,error,text-shadow)
+  ));
+
+  ///info
+  @include component($component:info,$map:(
+          background: map-nested-get($Semantic,info,background),
+          font-color: map-nested-get($Semantic,info,font-color),
+          border: map-nested-get($Semantic,info,border),
+          text-shadow: map-nested-get($Semantic,info,text-shadow)
+  ));
+
+  ///success
+  @include component($component:success,$map:(
+          background: map-nested-get($Semantic,success,background),
+          font-color: map-nested-get($Semantic,success,font-color),
+          border: map-nested-get($Semantic,success,border),
+          text-shadow: map-nested-get($Semantic,success,text-shadow)
+  ));
+
+  ///warning
+  @include component($component:warning,$map:(
+          background: map-nested-get($Semantic,warning,background),
+          font-color: map-nested-get($Semantic,warning,font-color),
+          border: map-nested-get($Semantic,warning,border),
+          text-shadow: map-nested-get($Semantic,warning,text-shadow)
+  ));
+ }" data-collapsed="@mixin _semantic-theme() { ... }"><code>@mixin _semantic-theme() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>create the semantic sass components from the $Semantic Map</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#variable-Semantic"><code>Semantic</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-semantic-components"><code>semantic-components</code></a></li></ul></section><section class="main__item container item" id="mixin-_semantic-state"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_semantic-state">_semantic-state</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _semantic-state() { 
+  background:map-nested-get($Semantic,$state,background) !important;
+  color:map-nested-get($Semantic,$state,font-color) !important;
+  border-color:map-nested-get($Semantic,$state,border) !important;
+  &amp;:before{
+    color:map-nested-get($Semantic,$state,font-color) !important;
+  }
+  &amp;:after{
+    color:map-nested-get($Semantic,$state,font-color) !important;
+  }
+  @include component-placeholder(map-nested-get($Semantic,$state,font-color));
+
+
+ }" data-collapsed="@mixin _semantic-state() { ... }"><code>@mixin _semantic-state() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#variable-Semantic"><code>Semantic</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-_semantic-component"><code>_semantic-component</code></a></li></ul></section><section class="main__item container item" id="mixin-_semantic-component"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#mixin-_semantic-component">_semantic-component</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin _semantic-component() { 
+  *{
+    &amp;.#{$state}{
+      @include _semantic-state($state);
+      &amp;:hover{
+        @include _semantic-state($state);
+      }
+      &amp;:active,&amp;.active{
+        @include _semantic-state($state);
+      }
+    }
+  }
+ }" data-collapsed="@mixin _semantic-component() { ... }"><code>@mixin _semantic-component() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-_semantic-state"><code>_semantic-state</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-semantic-components"><code>semantic-components</code></a></li></ul></section><section class="main__item container item" id="mixin-semantic-components"><h3 class="item__heading"><a class="item__name" href="#mixin-semantic-components">semantic-components</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin semantic-components() { 
+  @include _semantic-theme();
+  @include _semantic-component(error);
+  @include _semantic-component(info);
+  @include _semantic-component(warning);
+  @include _semantic-component(success);
+
+ }" data-collapsed="@mixin semantic-components() { ... }"><code>@mixin semantic-components() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>instantiates the semantic sass components:error,info,success,warning applies the semantic state to any html element decorated with .error,.info,.success,.warning classes</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-_semantic-theme"><code>_semantic-theme</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-_semantic-component"><code>_semantic-component</code></a></li></ul></section></section><section class="main__sub-section" id="undefined-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="variable-Semantic"><h3 class="item__heading"><a class="item__name" href="#variable-Semantic">Semantic</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$Semantic: (
+        error:(
+                background:$semantic-error-background,
+                font-color:$semantic-error-font-color,
+                color:$semantic-error-font-color,
+                border:$semantic-error-border,
+                text-shadow:$semantic-error-text-shadow
+        ),
+        info:(
+                background:$semantic-info-background,
+                font-color:$semantic-info-font-color,
+                color:$semantic-info-font-color,
+                border:$semantic-info-border,
+                text-shadow:$semantic-info-text-shadow
+        ),
+        success:(
+                background:$semantic-success-background,
+                font-color:$semantic-success-font-color,
+                color:$semantic-success-font-color,
+                border:$semantic-success-border,
+                text-shadow:$semantic-success-text-shadow
+        ),
+        warning:(
+                background:$semantic-warning-background,
+                font-color:$semantic-warning-font-color,
+                color:$semantic-warning-font-color,
+                border:$semantic-warning-border,
+                text-shadow:$semantic-warning-text-shadow
+        )
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Semantic map</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-_semantic-theme"><code>_semantic-theme</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-_semantic-state"><code>_semantic-state</code></a></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><span class="project-info__name">Sass-semantic-components</span><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
