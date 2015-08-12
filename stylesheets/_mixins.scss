@@ -67,6 +67,12 @@
   }
 }
 
+/// semantic sass component theme only
+/// @access public
+@mixin semantic-theme(){
+  @include _semantic-theme();
+}
+
 /// instantiates the semantic sass components:error,info,success,warning
 /// applies the semantic state to any html element decorated with .error,.info,.success,.warning classes
 /// @access public
